@@ -4,7 +4,7 @@
 
   $dataBuku = query('SELECT * FROM buku');
 
-
+  $bukuTerdikit = query ('SELECT * FROM buku WHERE stok = (SELECT MIN(stok) FROM buku);')[0];
   if(isset($_GET['cari'])){
     $keyword = $_GET['keyword'];
     $dataBuku = cariBuku($_GET['keyword']);
@@ -27,7 +27,12 @@
     <tbody>
     <?php foreach ($dataBuku as $db) : ?>
       <tr>
-        <td><?= $db['id_buku']; ?></td>
+        <td>
+          <?= $db['id_buku']; ?>
+          <?php if($db['id_buku'] == $bukuTerdikit['id_buku']) : ?>
+            <span class="badge text-bg-danger">!</span>
+          <?php endif; ?>  
+        </td>
         <td><?= $db['kategori']; ?></td>
         <td><?= $db['nama_buku']; ?></td>
         <td><?= $db['harga']; ?></td>

@@ -39,7 +39,7 @@
             <a href="edit.php?id=<?= $db['id_buku']; ?>" class="text-decoration-none text-white">Ubah</a>
           </button>
           <button type="button" class="btn btn-danger">
-            <a href="hapus.php?id=<?= $db['id_buku']; ?>" class="text-decoration-none text-white">Hapus</a>
+            <a href="hapus.php?id=<?= $db['id_buku']; ?>" class="text-decoration-none text-white" onclick="return confirm('are you sure?')">Hapus</a>
           </button>
         </td>
       </tr>
