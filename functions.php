@@ -55,6 +55,11 @@ function hapusBuku($id){
 	mysqli_query($conn, $sql);
 }
 
+function cariPenerbit($nama){
+	global $conn;
+	$sql = "SELECT * FROM penerbit WHERE nama_penerbit = '$nama'";
+	return query($sql);
+}
 
 
  ?>

@@ -3,6 +3,7 @@
   include_once 'header.php';
 
   $dataBuku = query('SELECT * FROM buku');
+  
   if(isset($_GET['cari'])){
     $keyword = $_GET['keyword'];
     $dataBuku = cariBuku($_GET['keyword']);
@@ -10,6 +11,9 @@
 ?>
 
 <div class="container mt-4">
+  <button type="button" class="btn btn-primary">
+    <a href="tambah.php" class="text-decoration-none text-white">Tambah</a>
+  </button>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -32,9 +36,6 @@
         <td><?= $db['stok']; ?></td>
         <td><?= $db['penerbit']; ?></td>
         <td>
-          <button type="button" class="btn btn-primary">
-            <a href="tambah.php?id=<?= $db['id_buku']; ?>" class="text-decoration-none text-white">Tambah</a>
-          </button>
           <button type="button" class="btn btn-success">
             <a href="edit.php?id=<?= $db['id_buku']; ?>" class="text-decoration-none text-white">Ubah</a>
           </button>
