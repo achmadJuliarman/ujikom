@@ -3,7 +3,6 @@
   include_once 'header.php';
 
   $dataBuku = getBuku();
-
   $bukuTerdikit = query ('SELECT * FROM buku WHERE stok = (SELECT MIN(stok) FROM buku);')[0];
   if(isset($_GET['cari'])){
     $keyword = $_GET['keyword'];
