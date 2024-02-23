@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 23 Feb 2024 pada 01.53
+-- Waktu pembuatan: 23 Feb 2024 pada 15.58
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -41,13 +41,14 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id_buku`, `kategori`, `nama_buku`, `harga`, `stok`, `penerbit`) VALUES
-('as123asd', '213123', '1231231', 123123123, 213123, 'Sinar Informatika'),
-('K1001', 'Keilmuan', 'Asepnium', 500000, 7, 'Rudy Conge'),
-('Mamas Tai', 'Keilmuan', 'Asep', 70000, 100, 'Sinar Informatika'),
-('Papeng Tai', 'Keilmuan', 'Not ', 30000, 100, 'Sinar Informatika'),
-('Rudy Tai', 'Bisnis', 'Griffith', 40000, 100, 'Sinar Informatika'),
-('Udin Tai', 'Keilmuan', 'Guts', 90000, 100, 'Sinar Informatika'),
-('Uung Tai', 'Keilmuan', 'Rudeus', 50000, 10, 'Sinar Informatika');
+('K1001', 'Keilmuan', 'Analisis & Perancangan Sistem informasi', 50000, 60, 'Penerbit Informatika'),
+('K1002', 'Keilmuan', 'Artificial Intelligence', 45000, 60, 'Penerbit Informatika'),
+('K1003', 'Keilmuan', 'Autocad 3 Dimensi', 40000, 25, 'Penerbit Informatika'),
+('K1004', 'Bisnis', 'Bisnis Online', 75000, 9, 'Penerbit Informatika'),
+('K1005', 'Keilmuan', 'Cloud Computing Technology', 85000, 15, 'Penerbit Informatika'),
+('K1006', 'Bisnis', 'Etika Bisnis dan Tanggung Jawab Sosial', 67500, 20, 'Penerbit Informatika'),
+('K1007', 'Novel', 'Cahaya Di Penjuru Hati', 58000, 10, 'Andi Offset'),
+('K1008', 'Novel', 'Aku Ingin Cerita', 48000, 12, 'Danendra');
 
 -- --------------------------------------------------------
 
@@ -68,8 +69,9 @@ CREATE TABLE `penerbit` (
 --
 
 INSERT INTO `penerbit` (`id_penerbit`, `nama_penerbit`, `alamat`, `kota`, `telepon`) VALUES
-('SP01', 'Sinar Informatika', 'jl. Buah Batu', 'Bandung', '081222672845'),
-('SP02', 'Rudy Conge', 'jl. Buah Batu', 'Bandung', '081222672845');
+('SP01', 'Penerbit Informatika', 'Jl. Buah Batu No.121', 'Bandung', '0813-2220-1946'),
+('SP02', 'Andi Offset', 'Jl. Suryalaya IX No.32', 'Bandung', '0878-3903-0688'),
+('SP03', 'Danendra', 'Jl. Moch Toha 44', 'Bandung', '022-5201215');
 
 --
 -- Indexes for dumped tables

@@ -63,7 +63,7 @@ if (isset($_POST['ubah']))
 	  </select>
 	  <label for="floatingSelect">Penerbit</label>
 	</div>
-	<button class="btn btn-success" type="submit" name="ubah">tambah</button>
+	<button class="btn btn-success" type="submit" name="ubah">ubah</button>
 </div>
 </form>
 <?php

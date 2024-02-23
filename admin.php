@@ -44,7 +44,7 @@
         <td><?= $db['id_buku']; ?></td>
         <td><?= $db['kategori']; ?></td>
         <td><?= $db['nama_buku']; ?></td>
-        <td><?= $db['harga']; ?></td>
+        <td><?= number_format($db['harga'],0,".","."); ?></td>
         <td>
           <?= $db['stok']; ?>
           <?php if($db['id_buku'] == $bukuTerdikit['id_buku']) : ?>

@@ -16,34 +16,24 @@
     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
     <button class="btn btn-outline-success" type="submit" name="cari">Search</button>
   </form>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">ID Buku</th>
-        <th scope="col">Kategori</th>
-        <th scope="col">Nama Buku</th>
-        <th scope="col">Harga</th>
-        <th scope="col">Stok</th>
-        <th scope="col">Penerbit</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="container mt-2 mb-4 d-flex flex-wrap">
     <?php foreach ($dataBuku as $db) : ?>
-      <tr>
-        <td>
-          <?= $db['id_buku']; ?>
-          <?php if($db['id_buku'] == $bukuTerdikit['id_buku']) : ?>
-            <span class="badge text-bg-danger">!</span>
-          <?php endif; ?>  
-        </td>
-        <td><?= $db['kategori']; ?></td>
-        <td><?= $db['nama_buku']; ?></td>
-        <td><?= $db['harga']; ?></td>
-        <td><?= $db['stok']; ?></td>
-        <td><?= $db['penerbit']; ?></td>
-      </tr>
+      <div class="card mt-2 mx-2" style="width: 18rem;">
+        <img src="book.png" class="card-img-top" style="width:80%; margin: auto;">
+        <div class="card-body">
+          <h5 class="card-title"><?= $db['id_buku']; ?></h5>
+          <p class="card-text small">Kategori : <?= $db['kategori']; ?></p>
+          <p class="card-text small">Nama Buku : <?= $db['nama_buku']; ?></p>
+          <p class="card-text small">Harga : <?= number_format($db['harga'],0,".","."); ?></p>
+          <p class="card-text small">
+            Stok : <?= $db['stok']; ?>
+            <?php if($db['id_buku'] == $bukuTerdikit['id_buku']) : ?>
+              <span class="badge text-bg-danger">!</span>
+            <?php endif; ?></p>
+          <p class="card-text small">Penerbit : <?= $db['penerbit']; ?></p>
+        </div>
+      </div>
     <?php endforeach; ?>
-    </tbody>
-  </table>
+  </div>
 </div>
 <?php include_once 'footer.php' ?>    
