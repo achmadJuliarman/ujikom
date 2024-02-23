@@ -87,6 +87,7 @@ function ubahPenerbit($data){
 	$alamat = $data['alamat'];
 	$kota = $data['kota'];
 	$telepon = $data['telepon'];
+	$id_penerbit_lama = $data['id_penerbit_lama'];
 	$penerbit_lama = $data['nama_penerbit_lama'];
 
 	$sql1 = "UPDATE `penerbit` 
@@ -94,10 +95,11 @@ function ubahPenerbit($data){
 	`nama_penerbit`='$nama',
 	`alamat`='$alamat',
 	`kota`='$kota',
-	`telepon`='$telepon' WHERE id_penerbit = '$id';";
+	`telepon`='$telepon' WHERE id_penerbit = '$id_penerbit_lama';";
+	mysqli_query($conn, $sql1);
+
 	$sql2 ="UPDATE `buku` 
 	SET `penerbit`='$nama' WHERE penerbit = '$penerbit_lama'";
-	mysqli_query($conn, $sql1);
 	mysqli_query($conn, $sql2);
 }
 
