@@ -2,7 +2,7 @@
   include_once 'functions.php';
   include_once 'header.php';
 
-  $dataBuku = query('SELECT * FROM buku');
+  $dataBuku = getBuku();
 
   $bukuTerdikit = query ('SELECT * FROM buku WHERE stok = (SELECT MIN(stok) FROM buku);')[0];
   if(isset($_GET['cari'])){
@@ -13,6 +13,10 @@
 ?>
 
 <div class="container mt-4">
+  <form class="d-flex" role="search" action="#penerbit" method="get">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
+    <button class="btn btn-outline-success" type="submit" name="cari">Search</button>
+  </form>
   <table class="table table-hover">
     <thead>
       <tr>

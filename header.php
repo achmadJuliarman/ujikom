@@ -24,10 +24,6 @@
             <a class="nav-link active" aria-current="page" href="pengadaan.php">Pengadaan</a>
           </li>
         </ul>
-        <form class="d-flex" role="search" action="" method="get">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
-          <button class="btn btn-outline-success" type="submit" name="cari">Search</button>
-        </form>
       </div>
     </div>
   </nav>

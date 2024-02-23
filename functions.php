@@ -28,7 +28,7 @@ function tambahBuku($data){
 	$sql = "INSERT INTO `buku`(`id_buku`, `kategori`, `nama_buku`, `harga`, `stok`, `penerbit`) 
 	VALUES ('$id','$kategori','$namaBuku','$harga','$stok','$penerbit')";
 
-	mysqli_query($conn, $sql);
+	return mysqli_query($conn, $sql);;
 }
 
 function ubahBuku($data){
@@ -55,10 +55,52 @@ function hapusBuku($id){
 	mysqli_query($conn, $sql);
 }
 
-function cariPenerbit($nama){
+function getPenerbit(){
+	return query("SELECT * FROM penerbit");
+}
+
+function cariPenerbit($keyword){
 	global $conn;
-	$sql = "SELECT * FROM penerbit WHERE nama_penerbit = '$nama'";
-	return query($sql);
+	return query("SELECT * FROM penerbit WHERE nama_penerbit LIKE '%$keyword%'");
+}
+
+function tambahPenerbit($data){
+	global $conn;
+	$id = $data['id_penerbit'];
+	$nama = $data['nama_penerbit'];
+	$alamat = $data['alamat'];
+	$kota = $data['kota'];
+	$telepon = $data['telepon'];
+	$sql = "INSERT INTO `penerbit`(`id_penerbit`, `nama_penerbit`, `alamat`, `kota`, `telepon`) 
+	VALUES ('$id','$nama','$alamat','$kota','$telepon')";
+
+	mysqli_query($conn, $sql);
+}
+
+function ubahPenerbit($data){
+	global $conn;
+	$id = $data['id_penerbit'];
+	$nama = $data['nama_penerbit'];
+	$alamat = $data['alamat'];
+	$kota = $data['kota'];
+	$telepon = $data['telepon'];
+
+	$sql1 = "UPDATE `penerbit` 
+	SET `id_penerbit`='$id',
+	`nama_penerbit`='$nama',
+	`alamat`='$alamat',
+	`kota`='$kota',
+	`telepon`='$telepon' WHERE id_penerbit = '$id';";
+	$sql2 ="UPDATE `buku` 
+	SET `penerbit`='$nama' WHERE penerbit = '$nama'";
+	mysqli_query($conn, $sql1);
+	mysqli_query($conn, $sql2);
+}
+
+function hapusPenerbit($id){
+	global $conn;
+	$sql = "DELETE FROM penerbit WHERE id_penerbit = '$id'";
+	mysqli_query($conn, $sql);
 }
 
 
