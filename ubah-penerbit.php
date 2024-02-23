@@ -19,6 +19,7 @@ if (isset($_POST['ubah']))
  ?>
 <form action="" method="post">
 <div class="container p-4 ">
+	<input type="hidden" class="form-control" id="nama_penerbit_lama" name="nama_penerbit_lama" value="<?= $penerbitUbah['nama_penerbit'] ?>">
 	<div class="mb-3 row">
 	    <label for="id" class="col-sm-2 col-form-label">ID Penerbit</label>
 	    <div class="col-sm-10">
