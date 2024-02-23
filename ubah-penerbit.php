@@ -13,7 +13,7 @@ if (isset($_POST['ubah']))
 		</script>";
 
 	} catch (Exception $e) {
-		echo '<div class="container p-4 "><b>gagal mengubah <span class="badge text-bg-danger">!</span></b></div>';
+		echo '<div class="container p-4 "><b>gagal mengubah <span class="badge text-bg-danger">!</span></b></div>'.$e->getMessage();
 	}
 }
  ?>

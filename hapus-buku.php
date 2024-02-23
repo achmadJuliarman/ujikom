@@ -8,7 +8,7 @@
 			window.location.href = 'admin.php';
 		</script>";
 	} catch (Exception $e) {
-		echo '<div class="container p-4 "><b>Gagal Hapus <span class="badge text-bg-danger">!</span></b></div>';
+		echo '<div class="container p-4 "><b>Gagal Hapus <span class="badge text-bg-danger">!</span></b></div>'.$e->getMessage();
 	}
 
 ?>

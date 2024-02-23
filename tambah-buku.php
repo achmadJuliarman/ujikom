@@ -12,7 +12,7 @@ if (isset($_POST['tambah']))
 		</script>";
 
 	} catch (Exception $e) {
-		echo '<div class="container p-4 "><b>gagal menambahkan <span class="badge text-bg-danger">!</span></b></div>';
+		echo '<div class="container p-4 "><b>gagal menambahkan <span class="badge text-bg-danger">!</span></b></div>'.$e->getMessage();
 	}
 }
  ?>
