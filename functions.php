@@ -1,8 +1,8 @@
 <?php 
-
-$conn = mysqli_connect("localhost", "root", "", "data");
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+try {
+	$conn = mysqli_connect("localhost", "root", "", "data");
+} catch (Exception $e) {
+	die("koneksi Gagal : " . $e->getMessage());
 }
 
 function query($sql){
